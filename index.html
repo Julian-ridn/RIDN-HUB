@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Premier Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SAlUT TOM LA POMME</h1>
+            <p class="subtitle">Mon premier site web créé avec HTML, CSS et JavaScript</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>À propos</h2>
+                <p>Ceci est mon premier site web. Je l'ai créé pour apprendre les bases du développement web.</p>
+            </section>
+
+            <section class="card">
+                <h2>Compétences</h2>
+                <ul>
+                    <li>HTML - Structure de la page</li>
+                    <li>CSS - Style et design</li>
+                    <li>JavaScript - Interactivité</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Contact</h2>
+                <button id="clickButton" class="btn">Cliquez-moi !</button>
+                <p id="message" class="message"></p>
+            </section>
+
+            <section class="card">
+                <h2>Connexion</h2>
+                <div id="authSection">
+                    <p id="userInfo" style="display: none; margin-bottom: 15px; padding: 10px; background: #e7f3ff; border-radius: 10px;">
+                        <strong>✅ Connecté en tant que :</strong> <span id="userEmail"></span>
+                    </p>
+                    <button id="loginBtn" class="btn" style="margin-right: 10px;">Se connecter</button>
+                    <button id="logoutBtn" class="btn" style="display: none; background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">Se déconnecter</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <!-- Charger Supabase depuis CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Vérifier l'état de connexion au chargement de la page
+        document.addEventListener('DOMContentLoaded', async function() {
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const userInfo = document.getElementById('userInfo');
+            const userEmail = document.getElementById('userEmail');
+            
+            // Vérifier si l'utilisateur est connecté
+            const loggedIn = await isLoggedIn();
+            
+            if (loggedIn && supabase) {
+                try {
+                    const { data: { user } } = await supabase.auth.getUser();
+                    if (user) {
+                        // Afficher les informations de l'utilisateur
+                        userEmail.textContent = user.email;
+                        userInfo.style.display = 'block';
+                        loginBtn.style.display = 'none';
+                        logoutBtn.style.display = 'inline-block';
+                    }
+                } catch (error) {
+                    console.error('Erreur lors de la récupération de l\'utilisateur:', error);
+                }
+            } else {
+                // Utilisateur non connecté
+                loginBtn.style.display = 'inline-block';
+                logoutBtn.style.display = 'none';
+                userInfo.style.display = 'none';
+            }
+            
+            // Gérer le clic sur "Se connecter"
+            loginBtn.addEventListener('click', () => {
+                window.location.href = 'login.html';
+            });
+            
+            // Gérer le clic sur "Se déconnecter"
+            logoutBtn.addEventListener('click', async () => {
+                const result = await signOut();
+                if (result.success) {
+                    alert('✅ Déconnexion réussie !');
+                    window.location.reload();
+                } else {
+                    alert('❌ Erreur lors de la déconnexion : ' + result.error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
