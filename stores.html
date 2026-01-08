@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏪 Stores</h1>
+            <p class="subtitle">Gestion des magasins et points de vente</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Vos magasins</h2>
+                <p>Gérez tous vos points de vente et magasins depuis un seul endroit.</p>
+            </section>
+
+            <section class="card">
+                <h2>Liste des magasins</h2>
+                <ul>
+                    <li>Magasin principal : À configurer</li>
+                    <li>Boutique en ligne : À connecter</li>
+                    <li>Points de vente : À ajouter</li>
+                    <li>Statistiques par magasin : À consulter</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Inventaire</h2>
+                <ul>
+                    <li>Stock disponible : À vérifier</li>
+                    <li>Commandes en cours : À suivre</li>
+                    <li>Produits populaires : À analyser</li>
+                    <li>Alertes de stock : À configurer</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Performance</h2>
+                <p>Consultez les performances de chaque magasin et comparez-les.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

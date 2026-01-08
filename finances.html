@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finances - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Finances</h1>
+            <p class="subtitle">Gestion financière et comptabilité</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Résumé financier</h2>
+                <p>Consultez vos finances et suivez vos revenus et dépenses.</p>
+            </section>
+
+            <section class="card">
+                <h2>Revenus</h2>
+                <ul>
+                    <li>Revenus du mois : À définir</li>
+                    <li>Revenus de l'année : À définir</li>
+                    <li>Tendance : À analyser</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Dépenses</h2>
+                <ul>
+                    <li>Dépenses du mois : À définir</li>
+                    <li>Dépenses de l'année : À définir</li>
+                    <li>Budget restant : À calculer</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Graphiques</h2>
+                <p>Les graphiques financiers seront affichés ici une fois les données configurées.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

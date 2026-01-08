@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Strategy</h1>
+            <p class="subtitle">Stratégie et planification</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Stratégie globale</h2>
+                <p>Définissez et suivez votre stratégie pour atteindre vos objectifs.</p>
+            </section>
+
+            <section class="card">
+                <h2>Objectifs</h2>
+                <ul>
+                    <li>Objectifs à court terme : À définir</li>
+                    <li>Objectifs à moyen terme : À planifier</li>
+                    <li>Objectifs à long terme : À établir</li>
+                    <li>KPIs (Indicateurs clés) : À mesurer</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Plan d'action</h2>
+                <ul>
+                    <li>Actions prioritaires : À identifier</li>
+                    <li>Ressources nécessaires : À allouer</li>
+                    <li>Timeline : À établir</li>
+                    <li>Responsables : À assigner</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Analyse concurrentielle</h2>
+                <p>Analysez vos concurrents et identifiez vos avantages concurrentiels.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

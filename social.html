@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👥 Social</h1>
+            <p class="subtitle">Réseaux sociaux et communauté</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Réseaux sociaux</h2>
+                <p>Gérez vos réseaux sociaux et votre présence en ligne.</p>
+            </section>
+
+            <section class="card">
+                <h2>Statistiques sociales</h2>
+                <ul>
+                    <li>Abonnés total : À définir</li>
+                    <li>Engagement : À mesurer</li>
+                    <li>Publications du mois : À compter</li>
+                    <li>Croissance : À analyser</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Plateformes</h2>
+                <ul>
+                    <li>Instagram : À connecter</li>
+                    <li>Facebook : À connecter</li>
+                    <li>Twitter/X : À connecter</li>
+                    <li>LinkedIn : À connecter</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Publications récentes</h2>
+                <p>Vos dernières publications seront affichées ici.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

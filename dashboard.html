@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Dashboard</h1>
+            <p class="subtitle">Tableau de bord principal</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Vue d'ensemble</h2>
+                <p>Bienvenue sur votre tableau de bord. Ici vous pouvez voir toutes les informations importantes de votre projet.</p>
+            </section>
+
+            <section class="card">
+                <h2>Statistiques rapides</h2>
+                <ul>
+                    <li>Utilisateurs actifs : En cours de chargement...</li>
+                    <li>Revenus du mois : En cours de chargement...</li>
+                    <li>Conversions : En cours de chargement...</li>
+                    <li>Performance : En cours de chargement...</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Actions rapides</h2>
+                <p>Accédez rapidement aux différentes sections de votre site :</p>
+                <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+                    <a href="finances.html" class="btn">💰 Finances</a>
+                    <a href="social.html" class="btn">👥 Social</a>
+                    <a href="conversion.html" class="btn">📈 Conversion</a>
+                    <a href="strategy.html" class="btn">🎯 Strategy</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        // Marquer le lien actif dans la navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

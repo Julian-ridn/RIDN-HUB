@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Build - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔨 Before Build</h1>
+            <p class="subtitle">Préparation avant construction</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Checklist pré-construction</h2>
+                <p>Vérifiez tous les éléments nécessaires avant de commencer votre projet.</p>
+            </section>
+
+            <section class="card">
+                <h2>Étapes préparatoires</h2>
+                <ul>
+                    <li>Analyse des besoins : À compléter</li>
+                    <li>Planification du projet : À finaliser</li>
+                    <li>Budget et ressources : À valider</li>
+                    <li>Équipe et compétences : À organiser</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Documentation</h2>
+                <ul>
+                    <li>Cahier des charges : À rédiger</li>
+                    <li>Spécifications techniques : À définir</li>
+                    <li>Maquettes et designs : À préparer</li>
+                    <li>Planning : À établir</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Validation</h2>
+                <p>Assurez-vous que tous les éléments sont validés avant de commencer la construction.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

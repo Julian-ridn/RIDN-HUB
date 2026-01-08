@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion - Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 Conversion</h1>
+            <p class="subtitle">Optimisation et taux de conversion</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Taux de conversion</h2>
+                <p>Analysez et optimisez vos taux de conversion pour améliorer vos performances.</p>
+            </section>
+
+            <section class="card">
+                <h2>Métriques clés</h2>
+                <ul>
+                    <li>Taux de conversion global : À calculer</li>
+                    <li>Conversion par source : À analyser</li>
+                    <li>Taux de rebond : À mesurer</li>
+                    <li>Temps moyen sur le site : À suivre</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Optimisations</h2>
+                <ul>
+                    <li>Tests A/B : À configurer</li>
+                    <li>Landing pages : À optimiser</li>
+                    <li>Call-to-action : À améliorer</li>
+                    <li>Funnel de conversion : À analyser</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Rapports</h2>
+                <p>Les rapports détaillés de conversion seront disponibles ici.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Créé avec ❤️ en 2024</p>
+        </footer>
+    </div>
+
+    <script src="navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
